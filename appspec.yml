@@ -7,3 +7,6 @@ files:
     destination: /usr/share/nginx/html/
   - source: style.css
     destination: /usr/share/nginx/html/
+hooks:
+  BeforeInstall:
+    - location: RemoveExistingFiles.sh
