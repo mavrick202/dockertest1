@@ -48,5 +48,10 @@ pipeline {
                 sh 'curl http://$devnode:8100 || exit 1'
             }
         }
+        stage('Change Context To Default') {
+            steps {
+                sh 'docker context use default'
+            }
+        }
     }
 }
