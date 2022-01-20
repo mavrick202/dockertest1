@@ -12,8 +12,9 @@ pipeline {
     stages {
         stage('Building Dev Docker Branch') {
             when {
-                    GIT_BRANCH = 'origin/' + sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
-                    return GIT_BRANCH == 'origin/DevOpsB22-Dev'
+                expression {
+                    return env.BRANCH_NAME != 'DevOpsB22-Dev'
+                }
             }
             steps {
                 script {
