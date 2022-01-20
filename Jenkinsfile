@@ -15,8 +15,6 @@ pipeline {
                     GIT_BRANCH = 'origin/' + sh(returnStdout: true, script: 'git rev-parse --abbrev-ref HEAD').trim()
                     return GIT_BRANCH == 'origin/DevOpsB22-Dev'
             }
-        }
-        stage('Building our image') {
             steps {
                 script {
                     dockerImage = docker.build registry + ":v$BUILD_NUMBER"
