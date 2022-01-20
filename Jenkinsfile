@@ -17,7 +17,6 @@ pipeline {
                 }
             }
             steps {
-                sh "docker context use $devcontext"
                 script {
                     dockerImage = docker.build registry + ":v$BUILD_NUMBER"
                 }
@@ -25,7 +24,6 @@ pipeline {
         }
         stage('Push Image To DockerHUB') {
             steps {
-                sh "docker context use $devcontext"
                 script {
                     docker.withRegistry( '', registryCredential ) {
                         dockerImage.push()
