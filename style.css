@@ -6,6 +6,10 @@ h1 {
 	color: white
 }
 
+h2 {
+	color: orange
+}
+
 .square {
 	width: 30%;
 	background-color: purple;
