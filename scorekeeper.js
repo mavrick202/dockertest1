@@ -1,3 +1,4 @@
+//testing
 var colors = [
     "rgb(0, 0, 255)",
     "rgb(0, 255, 0)",
