@@ -1,0 +1,24 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Principal": {
+                "AWS": [
+                    "arn:aws:iam::721834156908:role/awsb65-ec2-sessions-manager-role",
+                    "arn:aws:iam::721834156908:user/TerraformUser"
+                ],
+                "Service": "cloudfront.amazonaws.com"
+            },
+            "Action": [
+                "s3:GetObject",
+                "s3:PutObject",
+                "s3:DeleteObject"
+            ],
+            "Resource": [
+                "arn:aws:s3:::awsb65crossaccountbucket",
+                "arn:aws:s3:::awsb65crossaccountbucket/*"
+            ]
+        }
+    ]
+}
